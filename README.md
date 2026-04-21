@@ -33,11 +33,11 @@ It highlights my work and gives a quick overview of what I can do as a developer
 
 ## 📂 Projects
 
-### Visitor Management System
+### Medi-Vision
 Built using Java and MySQL to manage visitor entry and exit efficiently.  
 Includes basic data handling and system organization.
 
-### Diet & Nutrition Planner
+### Customer Churn Analysis
 Backend-based application using Node.js and Express for generating personalized diet plans.
 
 ---
