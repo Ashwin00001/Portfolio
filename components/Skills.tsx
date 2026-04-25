@@ -28,12 +28,19 @@ export default function Skills() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.2 }}
           >
-            <p className="mb-2">{skill.name}</p>
+            {/* Name + Percentage */}
+            <div className="flex justify-between mb-2">
+              <p className="font-medium tracking-wide">{skill.name}</p>
+              <span className="text-gray-400">{skill.level}</span>
+            </div>
 
-            <div className="w-full bg-gray-800 rounded-full h-2">
-              <div
-                className="bg-white h-2 rounded-full"
-                style={{ width: skill.level }}
+            {/* Progress Bar */}
+            <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: skill.level }}
+                transition={{ duration: 1 }}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
               />
             </div>
           </motion.div>
