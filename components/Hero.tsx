@@ -1,47 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="h-screen flex flex-col justify-center items-center text-center bg-black text-white relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-6">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
 
-      {/* Background glow */}
-      <div className="absolute w-[500px] h-[500px] bg-purple-500 rounded-full blur-3xl opacity-30"></div>
+        {/* TEXT */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="font-[var(--font-space)] text-5xl md:text-6xl font-bold leading-tight">
+            Hi, I'm <span className="text-blue-500">Ashwin</span>
+          </h1>
 
-      <motion.h1
-        className="text-5xl md:text-7xl font-bold z-10"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        I'm Ashwin!!
-      </motion.h1>
+          <p className="font-[var(--font-inter)] text-gray-400 mt-4 text-lg">
+            Backend Developer | Java | Building real-world systems
+          </p>
 
-      <motion.p
-        className="mt-4 text-lg md:text-xl text-gray-300 z-10 max-w-xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        Backend Developer specializing in Java, building scalable systems.
-      </motion.p>
+          <button className="mt-6 px-6 py-3 bg-blue-500 rounded-xl hover:scale-105 transition">
+            View Projects
+          </button>
+        </motion.div>
 
-      <motion.div className="mt-8 flex gap-4 z-10">
-  <button className="px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition">
-    View Projects
-  </button>
+        {/* IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center"
+        >
+          <div className="p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full">
+            <Image
+              src="/profile.png"
+              alt="Ashwin"
+              width={280}
+              height={280}
+              className="rounded-full object-cover"
+            />
+          </div>
+        </motion.div>
 
-  <button className="px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition">
-    Contact Me
-  </button>
-
-  <a
-    href="/resume.pdf"
-    target="_blank"
-    className="px-6 py-3 border border-white rounded-xl hover:bg-white hover:text-black transition"
-  >
-    Resume
-  </a>
-</motion.div>
+      </div>
     </section>
   );
 }
